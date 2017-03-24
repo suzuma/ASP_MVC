@@ -1,0 +1,25 @@
+﻿
+@{
+    PlantillaMVC_EF.Models.Alumno alumno = ViewBag.Dato;
+}
+<ol class="breadcrumb">
+    <li><a href="~/Home">Inicio</a></li>    
+    <li class="active">Ficha</li>   
+</ol>
+
+    <div class="row" style="padding:0px">
+        <div class="col-md-3">
+            <img class="img-thumbnail" src="@alumno.sImagen" alt="@alumno.sApellidos" />
+        </div>
+        <div class="col-md-4">
+            <a href="#" class="list-group-item disabled">Ficha del Alumno</a>
+            <ul class="list-group">                
+                <li class="list-group-item"><span>Nombre:</span><strong>@alumno.sNombre</strong></li>
+                <li class="list-group-item"><span>Apellidos:</span><strong>@alumno.sApellidos</strong></li>
+                <li class="list-group-item"><span>Grupo:</span><strong>@alumno.sGrupo</strong></li>
+            </ul>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+

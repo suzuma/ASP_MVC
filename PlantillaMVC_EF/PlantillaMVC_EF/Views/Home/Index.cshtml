@@ -1,7 +1,49 @@
 ﻿
 @{
+    List<PlantillaMVC_EF.Models.Alumno> datos = ViewBag.Datos;
     //ViewBag.Title = "Index";
 }
 
-<h2>hola mundo</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Catalogo de Alumnos</h4>
+    </div>
+    <div class="panel-body">
+
+    </div>
+    <table class="table  table-hover table-sm">
+        <thead>
+            <tr>
+                <td class="col-md-2">MATRICULA</td>
+                <td class="col-md-4">APELLIDOS</td>
+                <td class="col-md-3">NOMBRE (S)</td>
+                <td class="col-md-2">GRUPO</td>
+                <td class="col-md-1"></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PlantillaMVC_EF.Models.Alumno item in datos) {
+                <tr>
+                    <td>@item.AlumnoId</td>
+                    <td>@item.sApellidos</td>
+                    <td>@item.sNombre</td>
+                    <td>@item.sGrupo</td>
+                    <td>
+                        <a href="~/Home/verAlumno/@item.AlumnoId">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <span>Total de regisotros: @datos.Count</span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
 
